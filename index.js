@@ -115,9 +115,11 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/) {
-  /*your code here*/
+function getFlavorByIndex(array, number) {
+  return array[number];
 }
+
+console.log("task5", getFlavorByIndex(originalFlavors, 3));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -133,9 +135,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/) {
-  /*your code here*/
+function removeFlavorByName(array, string) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === string) {
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
+
+console.log("task6", removeFlavorByName(originalFlavors, "Rocky Road"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -144,7 +153,7 @@ Your task is to write a function that checks every item in the array for a strin
 Use the filterByWord function below to do the following:
   1. Receive an array in the first parameter that will take the flavors array as an argument
   2. Receive a string in the second parameter that will take the filter value as as an argument (example: "chocolate")
-  3. Check to see if any of the flavors in the array contain that string
+  3. Check to see if any of the flavors in the array contain that string loop
   4. If they do, add them to a new array
   5. Return the new array that contains the filtered flavors
 
@@ -155,9 +164,18 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/) {
-  /*your code here*/
+function filterByWord(array, string) {
+  const filteredFlavors = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      filteredFlavors.push(array[i]);
+    }
+  }
+
+  return filteredFlavors;
 }
+
+console.log("task7", filterByWord(originalFlavors, "Chocolate"));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
